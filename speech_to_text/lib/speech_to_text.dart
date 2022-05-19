@@ -593,6 +593,7 @@ class SpeechToText {
   }
 
   void _onNotifyStatus(String status) {
+    var notifyStatus = status;
     // print('status $status');
     switch (status) {
       case doneStatus:
@@ -615,7 +616,7 @@ class SpeechToText {
     _listening = status == listeningStatus;
     // print(status);
     if (null != statusListener) {
-      statusListener!(status);
+      statusListener!(notifyStatus);
     }
   }
 
